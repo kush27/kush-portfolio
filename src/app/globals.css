@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 210 20% 95%;
+    --card: 220 15% 11%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 15% 9%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 78 89% 70%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 78 89% 70%;
+    --accent-foreground: 220 15% 8%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 78 89% 70%;
+    --radius: 0.75rem;
+
+    --prose-body: hsl(var(--foreground));
+    --prose-headings: hsl(var(--foreground));
+    --prose-lead: hsl(var(--muted-foreground));
+    --prose-links: hsl(var(--primary));
+    --prose-bold: hsl(var(--foreground));
+    --prose-counters: hsl(var(--muted-foreground));
+    --prose-bullets: hsl(var(--border));
+    --prose-hr: hsl(var(--border));
+    --prose-quotes: hsl(var(--foreground));
+    --prose-quote-borders: hsl(var(--border));
+    --prose-captions: hsl(var(--muted-foreground));
+    --prose-code: hsl(var(--primary));
+    --prose-pre-code: hsl(var(--secondary-foreground));
+    --prose-pre-bg: hsl(var(--secondary));
+    --prose-th-borders: hsl(var(--border));
+    --prose-td-borders: hsl(var(--border));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes ticker-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.animate-ticker-reverse {
+  animation: ticker-reverse 25s linear infinite;
+}
+
+/* Scroll reveal */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Floating chatbot pulse */
+@keyframes chatPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(163, 230, 53, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(163, 230, 53, 0); }
+}
+
+.animate-chat-pulse {
+  animation: chatPulse 2.5s ease-in-out infinite;
+}
+
+/* Available badge pulse */
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.animate-dot-pulse {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Gradient mesh bg */
+.hero-mesh {
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(163, 230, 53, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 20% 80%, rgba(163, 230, 53, 0.04) 0%, transparent 60%);
+}
+
+/* Hover line grow */
+.nav-link-hover::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: hsl(78, 89%, 70%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* Skill pill hover */
+.skill-pill {
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+.skill-pill:hover {
+  border-color: rgba(163, 230, 53, 0.4);
+  color: hsl(78, 89%, 70%);
+  background-color: rgba(163, 230, 53, 0.05);
+}
+
+/* Timeline */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.timeline-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Counter number */
+.counter-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Project card hover overlay */
+.project-img-zoom {
+  transition: transform 0.5s ease;
+}
+.project-card:hover .project-img-zoom {
+  transform: scale(1.06);
+}

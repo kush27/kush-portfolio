@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "1",
+      "description": "Avatar for Vikash Kumar Singh",
+      "imageUrl": "/vikash-profile.png",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "project-1",
+      "description": "Placeholder for E2E Automation Framework",
+      "imageUrl": "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "software development"
+    },
+    {
+      "id": "project-2",
+      "description": "Placeholder for Performance Testing Framework",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "dashboard charts"
+    },
+    {
+      "id": "project-3",
+      "description": "Placeholder for Internal Test Data Service",
+      "imageUrl": "https://images.unsplash.com/photo-1632251141959-40b21a6c118c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "database server"
+    },
+    {
+      "id": "project-4",
+      "description": "Placeholder for CI/CD Pipeline Integration",
+      "imageUrl": "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cicd pipeline"
+    },
+    {
+      "id": "hero-background",
+      "description": "Professional tech background for hero section",
+      "imageUrl": "/hero-background.jpeg",
+      "imageHint": "professional workspace"
+    }
+  ]
+}
