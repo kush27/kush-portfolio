@@ -1,5 +1,6 @@
 'use server';
 
+import React from 'react';
 import { askChatbot, type Message } from '@/ai/flows/chatbot';
 import { generateResumeFromProfile, type GenerateResumeFromProfileInput } from '@/ai/flows/resume-from-profile';
 import { ContactEmail } from '@/components/emails/contact-email';
@@ -58,7 +59,7 @@ export async function sendContactEmailAction(prevState: any, formData: FormData)
       to: [process.env.RESEND_RECIPIENT_EMAIL],
       reply_to: email,
       subject: emailSubject,
-      react: ContactEmail({ name, email, message }),
+      react: React.createElement(ContactEmail, { name, email, message }),
       text: `Name: ${name}\nEmail: ${email}\n${subject ? `Subject: ${subject}\n` : ''}Message: ${message}`,
     });
 
