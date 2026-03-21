@@ -12,9 +12,7 @@ export default function Hero() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
 
   const tickerItems = [
-    'Java', 'Selenium', 'Playwright', 'Spring Boot', 'RestAssured',
-    'Gatling', 'Cucumber BDD', 'Jenkins', 'Docker', 'TypeScript',
-    'CI/CD', 'Azure DevOps', 'Microservices', 'TestNG', 'PostgreSQL',
+    'Java', 'Selenium', 'Playwright', 'Cucumber BDD', 'Eclipse', 'TestNG', 'Intellij IDEA', 'DevTest', 'JIRA', 'Commando', 'Confluence', 'TeamCity', 'Postman', 'Bruno', 'Git', 'GitHub', 'Jenkins'
   ];
 
   return (
@@ -39,12 +37,11 @@ export default function Hero() {
             </div>
 
             <h1 className="font-headline text-5xl sm:text-6xl xl:text-7xl font-black tracking-tighter leading-[0.95]">
-              Vikash<br />Kumar<br />
-              <span className="text-primary">Singh</span>
+              Kush<br />Kumar
             </h1>
 
             <p className="text-lg font-headline font-semibold text-muted-foreground">
-              QA Lead &amp; Senior Consultant
+              Software Engineer
             </p>
 
             <p className="text-muted-foreground leading-relaxed max-w-lg text-sm">
@@ -82,7 +79,7 @@ export default function Hero() {
             {/* Quick stats */}
             <div className="flex gap-8 pt-2 border-t border-border/50">
               {[
-                { num: '7+', label: 'Years Exp.' },
+                { num: '8+', label: 'Years Exp.' },
                 { num: '3', label: 'Top Firms' },
                 { num: '4+', label: 'Frameworks Built' },
               ].map((s) => (
@@ -119,7 +116,7 @@ export default function Hero() {
 
               {/* Floating badges */}
               <div className="absolute -left-8 top-16 bg-card border border-border rounded-2xl px-4 py-3 shadow-xl text-xs">
-                <div className="font-headline font-black text-2xl text-primary leading-none">7+</div>
+                <div className="font-headline font-black text-2xl text-primary leading-none">8+</div>
                 <div className="text-muted-foreground mt-0.5">Years Exp.</div>
               </div>
               <div className="absolute -right-6 top-1/3 bg-card border border-border rounded-2xl px-4 py-3 shadow-xl text-xs">

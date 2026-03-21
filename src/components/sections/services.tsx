@@ -6,40 +6,40 @@ const services = [
     num: '01',
     title: 'Test Automation',
     items: [
-      'UI Automation — Selenium & Playwright',
-      'API Testing — RestAssured & Postman',
+      'UI Automation — Java, Selenium, Playwright',
+      'API Testing — Postman / REST Assured',
       'BDD Frameworks — Cucumber',
-      'Cross-browser & Mobile execution',
+      'Cross-browser and cross-platform execution',
     ],
   },
-  {
+    {
     num: '02',
-    title: 'Backend API Dev',
+    title: 'Framework Development',
     items: [
-      'REST APIs via Spring Boot',
-      'Test data management services',
-      'Event triggering & microservice validation',
-      'Integration with test pipelines',
+      'Custom automation framework design',
+      'Page Object Model (POM) implementation',
+      'Reusable utilities and reporting mechanisms',
+      'Integration with reporting tools (Extent Reports)',
     ],
   },
   {
     num: '03',
-    title: 'Performance Testing',
+    title: 'Functional & E2E Testing',
     items: [
-      'Load & stress testing with Gatling',
-      'Concurrency testing for microservices',
-      'Performance regression frameworks',
-      'Bottleneck analysis & reporting',
+      'End-to-End (E2E) testing of complex applications',
+      'Functional and regression testing',
+      'Test case design and execution',
+      'Defect tracking and root cause analysis',
     ],
   },
   {
     num: '04',
-    title: 'CI/CD Quality',
+    title: 'CI/CD & Quality Engineering',
     items: [
-      'Jenkins & Azure DevOps pipelines',
-      'GitHub Actions automation',
-      'Quality gates & feedback loops',
-      'Automated test reporting',
+      'CI/CD pipelines — Jenkins, GitHub Actions, TeamCity',
+      'Automated regression suite integration',
+      'Quality gates and real-time feedback loops',
+      'Version-controlled test repositories (Git)',
     ],
   },
 ];
@@ -69,8 +69,7 @@ export default function Services() {
             Engineering Quality<br />at Scale
           </h2>
           <p className="text-muted-foreground max-w-xl leading-relaxed text-sm">
-            As a QA Lead and Senior Consultant, I architect robust quality systems that give
-            engineering teams the confidence to ship fast without breaking things.
+            As a Software Engineer, I build reliable, high-quality software by combining manual and automated testing. With 8+ years of experience, I design automation frameworks using Java, Selenium, and Cucumber, and validate complex banking applications. I focus on catching defects early, improving test coverage, and ensuring smooth, stable releases through CI/CD pipelines like TeamCity.
           </p>
         </div>
 

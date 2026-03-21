@@ -1,6 +1,6 @@
 'use server';
 /**
- * @fileOverview A chatbot flow that answers questions about Vikash Kumar Singh.
+ * @fileOverview A chatbot flow that answers questions about Kush Kumar.
  *
  * - askChatbot - A function that takes a question and returns an answer.
  * - ChatbotInput - The input type for the askChatbot function.
@@ -59,7 +59,7 @@ const chatbotPrompt = ai.definePrompt({
   name: 'chatbotPrompt',
   input: { schema: ChatbotInputSchema },
   output: { schema: ChatbotOutputSchema },
-  prompt: `You are a friendly and engaging AI assistant for Vikash Kumar Singh. Your primary goal is to answer questions about his professional background in a helpful and welcoming manner, based ONLY on the conversation history and context provided below.
+  prompt: `You are a friendly and engaging AI assistant for Kush Kumar. Your primary goal is to answer questions about his professional background in a helpful and welcoming manner, based ONLY on the conversation history and context provided below.
 
 **Your Persona:**
 - **Welcoming:** Start your answers in a warm, conversational tone.

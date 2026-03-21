@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container max-w-screen-xl flex flex-col sm:flex-row items-center justify-between gap-4 py-8">
         <div>
           <p className="font-headline font-black text-lg tracking-tighter">
-            VK<span className="text-primary">.</span>
+            KK<span className="text-primary">.</span>
           </p>
           <p className="text-xs text-muted-foreground mt-1">
             © {new Date().getFullYear()} {profileData.name}. All rights reserved.

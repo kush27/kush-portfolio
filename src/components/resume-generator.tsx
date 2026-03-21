@@ -59,7 +59,7 @@ export function ResumeGenerator() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'vikash-kumar-singh-resume.html';
+    a.download = 'kush-kumar-resume.html';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -73,7 +73,7 @@ export function ResumeGenerator() {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF({ orientation: 'p', unit: 'px', format: [canvas.width, canvas.height] });
     pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-    pdf.save('vikash-kumar-singh-resume.pdf');
+    pdf.save('kush-kumar-resume.pdf');
   };
 
   return (
@@ -90,7 +90,7 @@ export function ResumeGenerator() {
           <DialogHeader>
             <DialogTitle className="font-headline font-black">AI-Tailored Resume</DialogTitle>
             <DialogDescription className="text-xs">
-              Paste a job description and AI will tailor Vikash's resume to perfectly match the role.
+              Paste a job description and AI will tailor Kush's resume to perfectly match the role.
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
