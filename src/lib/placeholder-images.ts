@@ -1,5 +1,5 @@
 import data from './placeholder-images.json';
-import profilePic from '@/assets/vikash-profile.png';
+import profilePic from '@/assets/Kush_Pic.jpeg';
 import heroBg from '@/assets/hero-background.jpeg';
 import type { StaticImageData } from 'next/image';
 
@@ -12,7 +12,7 @@ export type ImagePlaceholder = {
 
 // Replace local root URL with imported static image so components can use static import
 export const PlaceHolderImages: ImagePlaceholder[] = data.placeholderImages.map((p) => {
-  if (p.imageUrl === '/vikash-profile.png') {
+  if (p.imageUrl === '/Kush_Pic.jpeg') {
     return { ...p, imageUrl: profilePic };
   }
   if (p.id === 'hero-background') {

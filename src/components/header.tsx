@@ -33,7 +33,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-xl items-center justify-between">
         {/* Logo */}
         <Link href="/" className="font-headline text-xl font-black tracking-tighter">
-          VK<span className="text-primary">.</span>
+          KK<span className="text-primary">.</span>
         </Link>
 
         {/* Desktop nav */}

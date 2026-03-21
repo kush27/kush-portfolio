@@ -6,10 +6,10 @@ import { useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const tagMap: Record<string, string> = {
-  'project-1': 'Automation',
-  'project-2': 'Performance',
-  'project-3': 'Backend',
-  'project-4': 'CI/CD',
+  'project-1': 'MANUFACTURING',
+  'project-2': 'AUTOMATION',
+  'project-3': 'INSURANCE',
+  'project-4': 'BANKING',
 };
 
 export default function Portfolio() {

@@ -69,15 +69,15 @@ export default function Contact() {
               Let&apos;s work<br />together
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-sm">
-              Open to <span className="text-foreground font-medium">Senior QA Lead</span>, <span className="text-foreground font-medium">QA Architect</span>, and <span className="text-foreground font-medium">Consulting</span> roles. Currently available for new opportunities.
+              Open to <span className="text-foreground font-medium">Senior QA</span>, <span className="text-foreground font-medium">QA Architect</span>, and <span className="text-foreground font-medium">Consulting</span> roles. Currently available for new opportunities.
             </p>
 
             <div className="flex flex-col gap-4 mb-10">
               {[
                 { icon: <Mail className="h-4 w-4" />, label: profileData.email, href: `mailto:${profileData.email}` },
                 { icon: <Phone className="h-4 w-4" />, label: `+91 ${profileData.phone}`, href: `tel:+91${profileData.phone}` },
-                { icon: <Linkedin className="h-4 w-4" />, label: 'linkedin.com/in/vikashsinghkaushik', href: profileData.social.linkedin },
-                { icon: <Github className="h-4 w-4" />, label: 'github.com/vikashsinghdoc', href: profileData.social.github },
+                { icon: <Linkedin className="h-4 w-4" />, label: 'linkedin.com/in/kushkumar18', href: profileData.social.linkedin },
+                { icon: <Github className="h-4 w-4" />, label: 'github.com/kush27', href: profileData.social.github },
               ].map(c => (
                 <a
                   key={c.label}

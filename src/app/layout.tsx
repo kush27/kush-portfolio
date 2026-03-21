@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Vikash Kumar Singh — QA Lead & Senior Consultant',
-  description: 'QA Lead with 7+ years building scalable automation frameworks, REST APIs for test infrastructure, and CI/CD-enabled quality engineering. Open to Senior QA and consulting roles.',
-  keywords: ['QA Lead', 'Test Automation', 'Selenium', 'Playwright', 'Spring Boot', 'Java', 'CI/CD', 'Senior Consultant'],
+  title: 'Kush Kumar — Software Engineer',
+  description: 'Software Engineer with 8 years building automation frameworks, REST APIs for test infrastructure, and CI/CD-enabled quality engineering. Open to remote and hybrid roles.',
+  keywords: ['Software Engineer', 'Test Automation', 'Selenium', 'Playwright', 'Spring Boot', 'Java', 'CI/CD'],
 };
 
 export default function RootLayout({

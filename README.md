@@ -1,12 +1,12 @@
-# Vikash Kumar Singh — Portfolio (Revamped)
+# Kush Kumar — Portfolio (Revamped)
 
 A fully revamped Next.js 15 portfolio with a dark editorial design, inspired by Framer's Portavia template, featuring AI-powered features.
 
 ## ✨ Features
 
 - **Dark editorial design** — Syne + DM Sans fonts, lime-green accent system
-- **AI Chatbot** — Gemini-powered assistant that answers HR questions about Vikash
-- **AI Resume Generator** — Tailors Vikash's resume to any job description (paste JD → get PDF)
+- **AI Chatbot** — Gemini-powered assistant that answers HR questions about Kush
+- **AI Resume Generator** — Tailors Kush's resume to any job description (paste JD → get PDF)
 - **Animated hero** — Split layout with photo, floating stat badges, ticker marquee
 - **Scroll-reveal animations** — Sections animate in as you scroll
 - **Skills marquee** — Bidirectional auto-scrolling rows of all tech skills
@@ -31,7 +31,7 @@ GOOGLE_GENAI_API_KEY=your_google_ai_key_here
 
 # Resend — for the contact form email delivery
 RESEND_API_KEY=your_resend_api_key_here
-RESEND_RECIPIENT_EMAIL=vikashsinghdoc@gmail.com
+RESEND_RECIPIENT_EMAIL=kushdoc018@gmail.com
 ```
 
 **Getting API keys:**

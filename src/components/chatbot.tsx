@@ -16,7 +16,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 const SUGGESTED = [
-  'What is Vikash\'s automation stack?',
+  'What is Kush\'s automation stack?',
   'Which companies has he worked at?',
   'Is he open to QA Lead roles?',
   'What frameworks has he built?',
@@ -57,7 +57,7 @@ export function Chatbot() {
     else {
       setMessages([{
         role: 'assistant',
-        content: "👋 Hi! I'm Vikash's AI assistant. Ask me anything about his skills, experience, or career — I'm here to help you get to know him better!"
+        content: "👋 Hi! I'm Kush's AI assistant. Ask me anything about his skills, experience, or career — I'm here to help you get to know him better!"
       }]);
     }
   };
@@ -76,7 +76,7 @@ export function Chatbot() {
             <span className="h-8 w-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
               <Bot className="h-4 w-4 text-primary" />
             </span>
-            Ask About Vikash
+            Ask About Kush
           </DialogTitle>
           <DialogDescription className="text-xs">
             Powered by AI — ask about skills, experience, projects, or availability.
@@ -89,8 +89,8 @@ export function Chatbot() {
               <div key={index} className={`flex items-start gap-3 ${message.role === 'user' ? 'justify-end' : ''}`}>
                 {message.role === 'assistant' && (
                   <Avatar className="h-8 w-8 border border-border flex-shrink-0">
-                    <AvatarImage src={getImageUrl(avatarImage?.imageUrl || '')} alt="Vikash" />
-                    <AvatarFallback className="bg-primary text-primary-foreground text-xs font-bold">VK</AvatarFallback>
+                    <AvatarImage src={getImageUrl(avatarImage?.imageUrl || '')} alt="Kush" />
+                    <AvatarFallback className="bg-primary text-primary-foreground text-xs font-bold">KK</AvatarFallback>
                   </Avatar>
                 )}
                 <div className={`rounded-2xl px-4 py-3 max-w-[80%] text-sm leading-relaxed ${
@@ -112,8 +112,8 @@ export function Chatbot() {
             {isLoading && (
               <div className="flex items-start gap-3">
                 <Avatar className="h-8 w-8 border border-border flex-shrink-0">
-                  <AvatarImage src={getImageUrl(avatarImage?.imageUrl || '')} alt="Vikash" />
-                  <AvatarFallback className="bg-primary text-primary-foreground text-xs font-bold">VK</AvatarFallback>
+                  <AvatarImage src={getImageUrl(avatarImage?.imageUrl || '')} alt="Kush" />
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs font-bold">KK</AvatarFallback>
                 </Avatar>
                 <div className="rounded-2xl rounded-tl-sm bg-card border border-border px-4 py-3">
                   <div className="flex gap-1.5">
@@ -146,7 +146,7 @@ export function Chatbot() {
         <DialogFooter className="pt-2">
           <div className="relative w-full">
             <Input
-              placeholder="Ask about Vikash's experience, skills, or availability..."
+              placeholder="Ask about Kush's experience, skills, or availability..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
