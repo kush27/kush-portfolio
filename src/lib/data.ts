@@ -7,7 +7,7 @@ import { FaJava } from "react-icons/fa";
 export const profileData: Profile = {
   name: 'Kush Kumar',
   avatar: '1',
-  title: 'Software Engineer',
+  title: 'Senior Test Analyst',
   bio: 'I’m an Automation Test Engineer with 8 years of experience specializing in PEGA UI and Decisioning testing, with strong hands-on expertise in Java and Selenium. I focus on validating complex decision strategies, business rules and end-to-end user journeys to ensure reliable & data-driven outcomes.Over the years, I’ve worked on enterprise-scale applications, building and enhancing automation frameworks, improving test coverage and supporting Agile delivery teams. I’m passionate about quality engineering, clean test design and delivering stable releases by catching issues early and ensuring PEGA applications behave exactly as intended.',
   email: 'kushdoc018@gmail.com',
   phone: '8340788412',
@@ -19,7 +19,7 @@ export const profileData: Profile = {
 
 export const workExperienceData: Experience[] = [
   {
-    title: 'Software Engineer',
+    title: 'Senior Test Analyst',
     company: 'Commonwealth Bank of Australia (CBA)',
     domain: 'Banking - Financial Services',
     startDate: 'June 2023',

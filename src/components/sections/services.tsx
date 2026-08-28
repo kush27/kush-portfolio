@@ -69,7 +69,7 @@ export default function Services() {
             Engineering Quality<br />at Scale
           </h2>
           <p className="text-muted-foreground max-w-xl leading-relaxed text-sm">
-            As a Software Engineer, I build reliable, high-quality software by combining manual and automated testing. With 8+ years of experience, I design automation frameworks using Java, Selenium, and Cucumber, and validate complex banking applications. I focus on catching defects early, improving test coverage, and ensuring smooth, stable releases through CI/CD pipelines like TeamCity.
+            As a Senior Test Analyst, I build reliable, high-quality software by combining manual and automated testing. With 8+ years of experience, I design automation frameworks using Java, Selenium, and Cucumber, and validate complex banking applications. I focus on catching defects early, improving test coverage, and ensuring smooth, stable releases through CI/CD pipelines like TeamCity.
           </p>
         </div>
 
