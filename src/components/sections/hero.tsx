@@ -41,7 +41,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg font-headline font-semibold text-muted-foreground">
-              Software Engineer
+              Senior Test Analyst
             </p>
 
             <p className="text-muted-foreground leading-relaxed max-w-lg text-sm">
