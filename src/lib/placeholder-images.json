@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -8,27 +9,33 @@
     },
     {
       "id": "project-1",
-      "description": "Placeholder for E2E Automation Framework",
-      "imageUrl": "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "software development"
+      "description": "Manufacturing Operations Management System",
+      "imageUrl": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "industrial manufacturing technology"
     },
     {
       "id": "project-2",
-      "description": "Placeholder for Performance Testing Framework",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "dashboard charts"
+      "description": "Automation Testing Framework Development",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "computer hardware software automation"
     },
     {
       "id": "project-3",
-      "description": "Placeholder for Internal Test Data Service",
-      "imageUrl": "https://images.unsplash.com/photo-1632251141959-40b21a6c118c?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "database server"
+      "description": "Enterprise Insurance Claims Management Platform",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "business analytics dashboard"
     },
     {
       "id": "project-4",
-      "description": "Placeholder for CI/CD Pipeline Integration",
-      "imageUrl": "https://images.unsplash.com/photo-1763568258533-d0597f86ce62?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "cicd pipeline"
+      "description": "Next Best Conversation Decisioning Platform for Banking",
+      "imageUrl": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "banking finance business workspace"
+    },
+    {
+      "id": "project-5",
+      "description": "Kush QA Learning Hub",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "software learning and QA technology"
     },
     {
       "id": "hero-background",
