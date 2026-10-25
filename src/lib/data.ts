@@ -106,4 +106,10 @@ export const projectsData = [
     title: 'Next Best Conversation Decisioning Platform for Banking',
     description: 'Worked on an enterprise banking decisioning platform built using Pega Next Best Conversation (NBC) to deliver context-aware, personalized customer conversations across digital and assisted channels.The platform dynamically determined what to say, when to say it, and through which channel, based on customer profile, interaction history, eligibility rules, risk policies, and regulatory constraints.My responsibility was to automate testing and validation of NBC decision logic, ensuring accurate, compliant, and consistent customer conversations.',
   },
+  {
+    id: 'project-5',
+    title: 'Kush QA — QA Learning Hub',
+    description: 'Created a technical learning platform featuring structured resources on Manual Testing, Core Java, Selenium WebDriver, Cucumber Framework, and AI for Testing. The blog organizes QA learning content into lessons to support practical skill development in software testing and automation.',
+    link: 'https://kushqa.blogspot.com/',
+  },
 ];

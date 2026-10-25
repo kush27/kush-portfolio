@@ -1,4 +1,6 @@
+
 'use client';
+
 import { projectsData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
@@ -10,6 +12,7 @@ const tagMap: Record<string, string> = {
   'project-2': 'AUTOMATION',
   'project-3': 'INSURANCE',
   'project-4': 'BANKING',
+  'project-5': 'QA LEARNING',
 };
 
 export default function Portfolio() {
@@ -17,12 +20,20 @@ export default function Portfolio() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('opacity-100', 'translate-y-0'); e.target.classList.remove('opacity-0', 'translate-y-6'); }
-      }),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('opacity-100', 'translate-y-0');
+            e.target.classList.remove('opacity-0', 'translate-y-6');
+          }
+        }),
       { threshold: 0.1 }
     );
-    ref.current?.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+
+    ref.current
+      ?.querySelectorAll('.reveal-item')
+      .forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
@@ -31,27 +42,32 @@ export default function Portfolio() {
       <div className="container max-w-screen-xl">
         <div className="reveal-item opacity-0 translate-y-6 transition-all duration-700 mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary mb-4">
-            <span className="h-px w-5 bg-primary" /> Portfolio
+            <span className="h-px w-5 bg-primary" />
+            Portfolio
           </div>
+
           <h2 className="font-headline text-4xl sm:text-5xl font-black tracking-tighter leading-tight mb-4">
             Featured Projects
           </h2>
+
           <p className="text-muted-foreground max-w-xl text-sm leading-relaxed">
-            Key automation and engineering initiatives that delivered measurable impact
-            across enterprise-scale financial systems.
+            Key automation and engineering initiatives, alongside my QA
+            learning resources covering software testing and automation.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {projectsData.map((project, i) => {
-            const img = PlaceHolderImages.find(p => p.id === project.id);
-            return (
-              <div
-                key={project.id}
-                className="project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                {/* Image */}
+            const img = PlaceHolderImages.find(
+              (p) => p.id === project.id
+            );
+
+            const isBlog = project.id === 'project-5';
+            const blogUrl = 'https://kushqa.blogspot.com/';
+
+            const cardContent = (
+              <>
+                {/* Project image */}
                 {img && (
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -60,22 +76,64 @@ export default function Portfolio() {
                       fill
                       className="project-img-zoom object-cover grayscale-[20%] group-hover:grayscale-0"
                     />
-                    {/* overlay */}
+
                     <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-                    {/* tag */}
+
                     <div className="absolute top-4 left-4 bg-background/80 backdrop-blur border border-border rounded-full px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
-                      {tagMap[project.id]}
+                      {tagMap[project.id] ?? 'PROJECT'}
                     </div>
                   </div>
                 )}
 
+                {/* Project details */}
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-headline text-lg font-black group-hover:text-primary transition-colors">{project.title}</h3>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all flex-shrink-0 -translate-x-1 group-hover:translate-x-0 -translate-y-1 group-hover:translate-y-0" />
+                    <h3 className="font-headline text-lg font-black group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+
+                    <ArrowUpRight
+                      className="h-5 w-5 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all flex-shrink-0 -translate-x-1 group-hover:translate-x-0 -translate-y-1 group-hover:translate-y-0"
+                      aria-hidden="true"
+                    />
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {isBlog && (
+                    <span className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
+                      Explore Kush QA Blog
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  )}
                 </div>
+              </>
+            );
+
+            const cardClassName =
+              'project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 block';
+
+            return isBlog ? (
+              <a
+                key={project.id}
+                href={blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} — opens in a new tab`}
+                className={cardClassName}
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                {cardContent}
+              </a>
+            ) : (
+              <div
+                key={project.id}
+                className={cardClassName}
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                {cardContent}
               </div>
             );
           })}
