@@ -81,7 +81,7 @@ export default function About() {
               <span className="h-px w-5 bg-primary" /> About Me
             </div>
             <h2 className="font-headline text-4xl sm:text-5xl font-black tracking-tighter leading-tight mb-6">
-              Hi, I&apos;m Kush —<br />a Software Engineer who codes.
+              Hi, I&apos;m Kush —<br />a Senior Test Analyst focused on Quality Engineering.
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm mb-4">
               {profileData.bio}
