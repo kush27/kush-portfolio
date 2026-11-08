@@ -9,10 +9,11 @@ import { ArrowUpRight } from 'lucide-react';
 
 const tagMap: Record<string, string> = {
   'project-1': 'MANUFACTURING',
-  'project-2': 'AUTOMATION',
+  'project-2': 'CRM',
   'project-3': 'INSURANCE',
   'project-4': 'BANKING',
-  'project-5': 'QA LEARNING',
+  'project-5': 'AUTOMATION',
+  'project-6': 'QA LEARNING',
 };
 
 export default function Portfolio() {
@@ -62,7 +63,7 @@ export default function Portfolio() {
               (p) => p.id === project.id
             );
 
-            const isBlog = project.id === 'project-5';
+            const isBlog = project.id === 'project-6';
             const blogUrl = 'https://kushqa.blogspot.com/';
 
             const cardContent = (
