@@ -4,8 +4,8 @@
 import { projectsData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, X, ExternalLink } from 'lucide-react';
 
 const tagMap: Record<string, string> = {
   'project-1': 'MANUFACTURING',
@@ -16,9 +16,30 @@ const tagMap: Record<string, string> = {
   'project-6': 'QA LEARNING',
 };
 
+const techStackMap: Record<string, string[]> = {
+  'project-1': ['Java', 'Selenium', 'Cucumber'],
+  'project-2': ['Java', 'Selenium', 'TestNG'],
+  'project-3': ['Pega', 'Java', 'Selenium', 'Cucumber'],
+  'project-4': ['Pega Decisioning', 'Java', 'Selenium', 'Cucumber'],
+  'project-5': ['Java', 'Selenium', 'Cucumber', 'TestNG', 'POM'],
+  'project-6': [
+    'Manual Testing',
+    'Java',
+    'Selenium',
+    'API Testing',
+    'SQL',
+  ],
+};
+
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
+  const selectedProjectData = projectsData.find(
+    (project) => project.id === selectedProject
+  );
+
+  // Reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
@@ -38,9 +59,28 @@ export default function Portfolio() {
     return () => observer.disconnect();
   }, []);
 
+  // Close popup using Escape key
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedProject(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedProject]);
+
   return (
     <section id="portfolio" className="py-28" ref={ref}>
       <div className="container max-w-screen-xl">
+
+        {/* Section Heading */}
         <div className="reveal-item opacity-0 translate-y-6 transition-all duration-700 mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary mb-4">
             <span className="h-px w-5 bg-primary" />
@@ -57,18 +97,23 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
           {projectsData.map((project, i) => {
             const img = PlaceHolderImages.find(
               (p) => p.id === project.id
             );
 
             const isBlog = project.id === 'project-6';
-            const blogUrl = 'https://kushqa.blogspot.com/';
+            const techStack = techStackMap[project.id] ?? [];
+
+            const cardClassName =
+              'project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 flex flex-col h-full';
 
             const cardContent = (
               <>
-                {/* Project image */}
+                {/* Project Image */}
                 {img && (
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -86,8 +131,9 @@ export default function Portfolio() {
                   </div>
                 )}
 
-                {/* Project details */}
-                <div className="p-6">
+                {/* Project Information */}
+                <div className="p-6 flex flex-col flex-1">
+
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <h3 className="font-headline text-lg font-black group-hover:text-primary transition-colors">
                       {project.title}
@@ -99,13 +145,40 @@ export default function Portfolio() {
                     />
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {project.description}
                   </p>
 
+                  {/* Technology Stack */}
+                  <div className="mt-5">
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
+                      Technologies
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 rounded-lg text-xs font-medium bg-secondary/70 text-secondary-foreground border border-border/70 group-hover:border-primary/20 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Blog Link Text */}
                   {isBlog && (
                     <span className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
                       Explore Kush QA Blog
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  )}
+
+                  {/* View Details Text */}
+                  {!isBlog && (
+                    <span className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
+                      View Project Details
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   )}
@@ -113,25 +186,38 @@ export default function Portfolio() {
               </>
             );
 
-            const cardClassName =
-              'project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/30 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 block';
+            // Blog Card
+            if (isBlog) {
+              return (
+                <a
+                  key={project.id}
+                  href={project.link ?? 'https://kushqa.blogspot.com/'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} — opens in a new tab`}
+                  className={cardClassName}
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  {cardContent}
+                </a>
+              );
+            }
 
-            return isBlog ? (
-              <a
-                key={project.id}
-                href={blogUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${project.title} — opens in a new tab`}
-                className={cardClassName}
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                {cardContent}
-              </a>
-            ) : (
+            // Other Project Cards
+            return (
               <div
                 key={project.id}
-                className={cardClassName}
+                role="button"
+                tabIndex={0}
+                aria-label={`View details for ${project.title}`}
+                onClick={() => setSelectedProject(project.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedProject(project.id);
+                  }
+                }}
+                className={`${cardClassName} cursor-pointer text-left`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 {cardContent}
@@ -139,6 +225,87 @@ export default function Portfolio() {
             );
           })}
         </div>
+
+        {/* Project Details Popup */}
+        {selectedProjectData && (
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Close project details"
+                className="absolute right-5 top-5 rounded-full p-2 text-muted-foreground hover:bg-secondary hover:text-primary transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              {/* Project Title */}
+              <div className="mb-7 pr-10">
+                <span className="text-xs font-bold tracking-widest uppercase text-primary">
+                  {tagMap[selectedProjectData.id] ?? 'PROJECT'}
+                </span>
+
+                <h2
+                  id="project-modal-title"
+                  className="mt-3 text-2xl sm:text-3xl font-black font-headline"
+                >
+                  {selectedProjectData.title}
+                </h2>
+              </div>
+
+              {/* Project Overview */}
+              <div className="mb-7">
+                <h3 className="text-sm font-bold uppercase tracking-wider mb-3">
+                  Project Overview
+                </h3>
+
+                <p className="text-sm text-muted-foreground leading-7">
+                  {selectedProjectData.description}
+                </p>
+              </div>
+
+              {/* Technologies */}
+              <div className="mb-7">
+                <h3 className="text-sm font-bold uppercase tracking-wider mb-3">
+                  Tools & Technologies
+                </h3>
+
+                <div className="flex flex-wrap gap-2">
+                  {(techStackMap[selectedProjectData.id] ?? []).map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-lg border border-border bg-secondary/70 px-3 py-2 text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+
+              {/* Close Action */}
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                className="rounded-lg border border-border px-5 py-3 text-sm font-semibold hover:bg-secondary transition-colors"
+              >
+                Close Details
+              </button>
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   );
