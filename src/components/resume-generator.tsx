@@ -90,7 +90,7 @@ export function ResumeGenerator() {
           <DialogHeader>
             <DialogTitle className="font-headline font-black">AI-Tailored Resume</DialogTitle>
             <DialogDescription className="text-xs">
-              Paste a job description and AI will tailor Kush's resume to perfectly match the role.
+              Paste a job description to create a role-focused version of Kush's resume while keeping his experience and skills accurate.
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
