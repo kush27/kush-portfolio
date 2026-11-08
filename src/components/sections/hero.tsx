@@ -80,8 +80,8 @@ export default function Hero() {
             <div className="flex gap-8 pt-2 border-t border-border/50">
               {[
                 { num: '8+', label: 'Years Exp.' },
-                { num: '3', label: 'Top Firms' },
-                { num: '4+', label: 'Frameworks Built' },
+                { num: '3', label: 'Organizations' },
+                { num: '3', label: 'Business Domains' },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-headline text-2xl font-black text-primary">{s.num}</div>
