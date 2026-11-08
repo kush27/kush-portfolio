@@ -5,8 +5,20 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: 'Kush Kumar — Senior Test Analyst',
-  description: 'Senior Test Analyst with 8 years of experience in test automation, REST APIs for test infrastructure, and CI/CD-enabled quality engineering. Open to remote and hybrid roles.',
-  keywords: ['Senior Test Analyst', 'Test Automation', 'Selenium', 'Playwright', 'Java', 'CI/CD'],
+  description: 'Kush Kumar is a Senior Test Analyst with 8 years of experience in manual testing, Java Selenium automation, Cucumber BDD, PEGA testing, API testing and quality engineering.',
+  keywords: ['Kush Kumar', 'Senior Test Analyst', 'QA Engineer', 'Manual Testing', 'Java', 'Selenium WebDriver', 'Playwright', 'Cucumber BDD', 'API Testing', 'Postman', 'Bruno', 'SQL', 'PEGA Testing'],
+  openGraph: {
+    title: 'Kush Kumar | Senior Test Analyst & QA Automation Engineer',
+    description: 'Explore 8 years of experience in software testing, Java Selenium automation, Cucumber BDD, PEGA testing and API quality engineering.',
+    type: 'website',
+    url: 'https://kush-kumar-portfolio.vercel.app/',
+    siteName: 'Kush Kumar Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kush Kumar | Senior Test Analyst',
+    description: 'Senior Test Analyst portfolio — software testing, automation and quality engineering.',
+  },
 };
 
 export default function RootLayout({
