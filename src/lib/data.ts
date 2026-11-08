@@ -85,36 +85,42 @@ export const skillsData: Skill[] = [
 //    { name: 'Docker', icon: SiDocker, color: '#2496ED' },
 ];
 
-export const projectsData = [
+export const projectsData: Project[] = [
   {
     id: 'project-1',
-    title: 'Manufacturing Operations Management System – Test Automation',
-    description: 'Worked on a web-based Manufacturing Operations Management system designed to support core manufacturing processes such as production planning, inventory tracking, and quality control.Developed an automation testing framework using Java, Selenium, and Cucumber to validate critical manufacturing workflows and ensure system stability across frequent releases.',
+    title: 'Manufacturing Operations Management System',
+    description:
+      'Worked on a web-based Manufacturing Operations Management system designed to support core manufacturing processes such as production planning, inventory tracking, and quality control. Developed and maintained an automation testing framework using Java, Selenium WebDriver, and Cucumber to validate critical manufacturing workflows and ensure application stability across releases.',
   },
   {
     id: 'project-2',
     title: 'Customer Relationship Management (CRM) System',
-    description: 'Worked on a web-based Customer Relationship Management (CRM) system designed to manage customer information, lead tracking, contact management, and sales activities. Focused on functional and regression testing of critical CRM workflows, along with developing automation test scripts using Java, Selenium WebDriver, and TestNG to ensure application quality and stability.',
+    description:
+      'Worked on a web-based Customer Relationship Management (CRM) system designed to manage customer information, lead tracking, contact management, and sales activities. Performed functional and regression testing of key CRM workflows and developed automation test scripts using Java, Selenium WebDriver, and TestNG to validate application functionality and stability.',
   },
   {
     id: 'project-3',
     title: 'Enterprise Insurance Claims Management Platform – Test Automation',
-    description: 'Worked as an Automation Test Engineer on a unified Pega Case Management insurance platform designed to process claims across multiple insurance lines of business using a single reusable case framework with LoB-specific variations.Responsible for test automation strategy, framework design, and execution to validate complex Pega workflows, decision rules, SLAs, and integrations across all LoBs.',
+    description:
+      'Worked on an enterprise Pega Case Management platform designed to process insurance claims across multiple lines of business using a unified and reusable case management framework. Focused on automation strategy, framework development, and test execution to validate complex Pega workflows, business rules, SLAs, and system integrations.',
   },
   {
     id: 'project-4',
     title: 'Next Best Conversation Decisioning Platform for Banking',
-    description: 'Worked on an enterprise banking decisioning platform built using Pega Next Best Conversation (NBC) to deliver context-aware, personalized customer conversations across digital and assisted channels.The platform dynamically determined what to say, when to say it, and through which channel, based on customer profile, interaction history, eligibility rules, risk policies, and regulatory constraints.My responsibility was to automate testing and validation of NBC decision logic, ensuring accurate, compliant, and consistent customer conversations.',
+    description:
+      'Worked on an enterprise banking decisioning platform built using Pega Next Best Conversation (NBC) to deliver personalized customer interactions across digital and assisted channels. Focused on automating and validating decision logic, eligibility rules, customer journeys, and channel-specific outcomes to ensure accurate and consistent customer experiences.',
   },
   {
     id: 'project-5',
     title: 'Automation Testing Framework Development (Java, Selenium, Cucumber)',
-    description: 'Designed and implemented a custom automation testing framework using Java, Selenium WebDriver, and Cucumber (BDD) to automate functional testing for a web-based application.The framework was built with a modular, reusable architecture to support scalable test development, easy maintenance, and clear collaboration between technical and non-technical stakeholders using Gherkin feature files.',
+    description:
+      'Designed and implemented a modular automation testing framework using Java, Selenium WebDriver, and Cucumber (BDD) for web application testing. Applied Page Object Model (POM), reusable components, and Gherkin-based scenarios to improve test maintainability, scalability, and collaboration between QA and development teams.',
   },
   {
     id: 'project-6',
     title: 'Kush QA — QA Learning Hub',
-    description: 'Created a technical learning platform featuring structured resources on Manual Testing, Core Java, Selenium WebDriver, Cucumber Framework, and AI for Testing. The blog organizes QA learning content into lessons to support practical skill development in software testing and automation.',
+    description:
+      'Created a technical learning platform featuring structured tutorials and practical learning resources on Manual Testing, Core Java, Selenium WebDriver, Cucumber Framework, API Testing, SQL, and AI for Testing. The platform helps QA professionals strengthen their software testing knowledge and prepare for technical interviews.',
     link: 'https://kushqa.blogspot.com/',
   },
 ];
