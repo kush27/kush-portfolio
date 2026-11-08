@@ -8,7 +8,7 @@ export const profileData: Profile = {
   name: 'Kush Kumar',
   avatar: '1',
   title: 'Senior Test Analyst',
-  bio: 'I’m an Automation Test Engineer with 8 years of experience specializing in PEGA UI and Decisioning testing, with strong hands-on expertise in Java and Selenium. I focus on validating complex decision strategies, business rules and end-to-end user journeys to ensure reliable & data-driven outcomes.Over the years, I’ve worked on enterprise-scale applications, building and enhancing automation frameworks, improving test coverage and supporting Agile delivery teams. I’m passionate about quality engineering, clean test design and delivering stable releases by catching issues early and ensuring PEGA applications behave exactly as intended.',
+  bio: 'I’m a Senior Test Analyst with 8 years of experience across manual testing, UI automation and enterprise application quality engineering. My hands-on experience includes PEGA UI and Decisioning testing, Java, Selenium WebDriver, Cucumber BDD, API testing with Postman and Bruno, and SQL for test validation. I focus on reliable test design, end-to-end business workflows, reusable automation and clear quality feedback in Agile delivery teams.',
   email: 'kushdoc018@gmail.com',
   phone: '8340788412',
   social: {
@@ -56,6 +56,10 @@ export const educationData: Education[] = [
 
 export const skillsData: Skill[] = [
     { name: 'Java', icon: FaJava, color: '#f89820' },
+    { name: 'Manual Testing', icon: TestTube, color: '#0066CC' },
+    { name: 'API Testing', icon: Network, color: '#6c5ce7' },
+    { name: 'SQL', icon: Database, color: '#336791' },
+    { name: 'PEGA Decisioning', icon: Cog, color: '#5B6ABF' },
     { name: 'Selenium', icon: SiSelenium, color: '#43B02A' },
     { name: 'Playwright', icon: Rocket, color: '#2EAD33'},
     { name: 'Cucumber (BDD)', icon: SiCucumber, color: '#23BE23' },
