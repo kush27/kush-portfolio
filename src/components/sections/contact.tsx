@@ -69,7 +69,7 @@ export default function Contact() {
               Let&apos;s work<br />together
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-sm">
-              Open to <span className="text-foreground font-medium">Senior QA</span>, <span className="text-foreground font-medium">QA Architect</span>, and <span className="text-foreground font-medium">Consulting</span> roles. Currently available for new opportunities.
+              Open to opportunities in <span className="text-foreground font-medium">Senior Test Analyst</span>, <span className="text-foreground font-medium">Senior Test Engineer</span>, and <span className="text-foreground font-medium">Test Automation</span> roles.
             </p>
 
             <div className="flex flex-col gap-4 mb-10">
