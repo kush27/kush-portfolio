@@ -15,9 +15,9 @@
     },
     {
       "id": "project-2",
-      "description": "Automation Testing Framework Development",
-      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-      "imageHint": "computer hardware software automation"
+      "description": "Customer Relationship Management (CRM) System",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "customer relationship management dashboard"
     },
     {
       "id": "project-3",
@@ -33,6 +33,12 @@
     },
     {
       "id": "project-5",
+      "description": "Automation Testing Framework Development",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "computer hardware software automation"
+    },
+    {
+      "id": "project-6",
       "description": "Kush QA Learning Hub",
       "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
       "imageHint": "software learning and QA technology"

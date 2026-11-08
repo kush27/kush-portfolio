@@ -93,8 +93,8 @@ export const projectsData = [
   },
   {
     id: 'project-2',
-    title: 'Automation Testing Framework Development (Java, Selenium, Cucumber)',
-    description: 'Designed and implemented a custom automation testing framework using Java, Selenium WebDriver, and Cucumber (BDD) to automate functional testing for a web-based application.The framework was built with a modular, reusable architecture to support scalable test development, easy maintenance, and clear collaboration between technical and non-technical stakeholders using Gherkin feature files.',
+    title: 'Customer Relationship Management (CRM) System',
+    description: 'Worked on a web-based Customer Relationship Management (CRM) system designed to manage customer information, lead tracking, contact management, and sales activities. Focused on functional and regression testing of critical CRM workflows, along with developing automation test scripts using Java, Selenium WebDriver, and TestNG to ensure application quality and stability.',
   },
   {
     id: 'project-3',
@@ -108,6 +108,11 @@ export const projectsData = [
   },
   {
     id: 'project-5',
+    title: 'Automation Testing Framework Development (Java, Selenium, Cucumber)',
+    description: 'Designed and implemented a custom automation testing framework using Java, Selenium WebDriver, and Cucumber (BDD) to automate functional testing for a web-based application.The framework was built with a modular, reusable architecture to support scalable test development, easy maintenance, and clear collaboration between technical and non-technical stakeholders using Gherkin feature files.',
+  },
+  {
+    id: 'project-6',
     title: 'Kush QA — QA Learning Hub',
     description: 'Created a technical learning platform featuring structured resources on Manual Testing, Core Java, Selenium WebDriver, Cucumber Framework, and AI for Testing. The blog organizes QA learning content into lessons to support practical skill development in software testing and automation.',
     link: 'https://kushqa.blogspot.com/',
