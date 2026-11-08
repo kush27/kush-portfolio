@@ -28,8 +28,7 @@ export default function Experience() {
             Work Experience
           </h2>
           <p className="text-muted-foreground max-w-xl text-sm leading-relaxed">
-            A track record of delivering quality engineering solutions at top-tier consulting firms
-            across Finance, Data Governance, and Retail domains.
+            Experience delivering quality engineering solutions across Banking, Insurance and Manufacturing domains, combining hands-on testing with practical automation.
           </p>
         </div>
 
