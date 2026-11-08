@@ -1,14 +1,28 @@
+
 import type { Profile, Experience, Education, Skill, Project } from '@/lib/types';
-import { Github, GitMerge, TestTube, Code, Network, RefreshCw, FileText, Briefcase, GraduationCap, Mail, Phone, Database, Cog, BrainCircuit, Rocket } from 'lucide-react';
-import { SiSpringboot, SiGatling, SiCucumber, SiPostman, SiJenkins, SiDocker, SiTypescript, SiJavascript, SiJira, SiSelenium, SiGnubash, SiGradle, SiApachemaven, SiGithubactions } from 'react-icons/si';
-import { GrTest } from "react-icons/gr";
-import { FaJava } from "react-icons/fa";
+import {
+  Github,
+  TestTube,
+  Code,
+  FileText,
+  RefreshCw,
+  Rocket,
+} from 'lucide-react';
+import {
+  SiCucumber,
+  SiPostman,
+  SiJenkins,
+  SiJira,
+  SiSelenium,
+} from 'react-icons/si';
+import { GrTest } from 'react-icons/gr';
+import { FaJava } from 'react-icons/fa';
 
 export const profileData: Profile = {
   name: 'Kush Kumar',
   avatar: '1',
   title: 'Senior Test Analyst',
-  bio: 'I’m an Automation Test Engineer with 8 years of experience specializing in PEGA UI and Decisioning testing, with strong hands-on expertise in Java and Selenium. I focus on validating complex decision strategies, business rules and end-to-end user journeys to ensure reliable & data-driven outcomes.Over the years, I’ve worked on enterprise-scale applications, building and enhancing automation frameworks, improving test coverage and supporting Agile delivery teams. I’m passionate about quality engineering, clean test design and delivering stable releases by catching issues early and ensuring PEGA applications behave exactly as intended.',
+  bio: 'I’m an Automation Test Engineer with 8 years of experience specializing in PEGA UI and Decisioning testing, with strong hands-on expertise in Java and Selenium. I focus on validating complex decision strategies, business rules and end-to-end user journeys to ensure reliable and data-driven outcomes. Over the years, I’ve worked on enterprise-scale applications, building and enhancing automation frameworks, improving test coverage and supporting Agile delivery teams. I’m passionate about quality engineering, clean test design and delivering stable releases by catching issues early and ensuring PEGA applications behave exactly as intended.',
   email: 'kushdoc018@gmail.com',
   phone: '8340788412',
   social: {
@@ -24,7 +38,8 @@ export const workExperienceData: Experience[] = [
     domain: 'Banking - Financial Services',
     startDate: 'June 2023',
     endDate: 'Present',
-    description: '• Designed and implemented scalable Pega Decisioning automation frameworks using Java, Selenium WebDriver and Cucumber(BDD) to validate high-volume banking transaction workflows, ensuring accuracy, reliability and compliance.\n• Integrated automated regression test suites into TeamCity CI/CD pipelines, enabling continuous testing, faster feedback cycles and reduced release timelines.\n• Led functional and end-to-end (E2E) testing for the InvestPlus banking application, identifying critical defects early in the SDLC and improving overall release stability.\n• Collaborated with cross-functional Agile teams to define acceptance criteria, support sprint execution and manage defect lifecycle through closure using Jira.\n• Enhanced quality visibility and release readiness by automating test execution reports, dashboards and QA metrics, providing real-time insights to stakeholders.\n• Utilized GitHub Copilot to accelerate automation framework development, reduce repetitive coding effort, improve code consistency and maintainability across the test suite.',
+    description:
+      '• Designed and implemented scalable Pega Decisioning automation frameworks using Java, Selenium WebDriver and Cucumber (BDD) to validate banking transaction workflows, ensuring accuracy and reliability.\n• Integrated automated regression test suites into TeamCity CI/CD pipelines, enabling continuous testing and faster feedback cycles.\n• Led functional and end-to-end (E2E) testing for the InvestPlus banking application, identifying defects early in the SDLC and improving release stability.\n• Collaborated with cross-functional Agile teams to define acceptance criteria, support sprint execution and manage defect lifecycle through closure using Jira.\n• Enhanced quality visibility and release readiness by automating test execution reports, dashboards and QA metrics.\n• Utilized GitHub Copilot to accelerate automation framework development, reduce repetitive coding effort and improve code maintainability.',
   },
   {
     title: 'Senior Test Engineer',
@@ -32,7 +47,8 @@ export const workExperienceData: Experience[] = [
     domain: 'Insurance',
     startDate: 'Nov 2020',
     endDate: 'June 2023',
-    description: '• Contributed extensively to UI automation using Java, Selenium WebDriver and Cucumber (BDD) by stabilizing existing automation frameworks through utility enhancements, optimized synchronization strategies and reduction of flaky tests.\n• Designed and developed scalable Pega UI automation scripts for a complex insurance policy management system, increasing automation coverage and significantly reducing manual testing effort.\n• Implemented BDD-based automation frameworks using Cucumber, aligning test scenarios with business requirements and improving collaboration between QA, development and business stakeholders.\n• Executed comprehensive Regression Testing and System Integration Testing (SIT) to validate the stability, accuracy and reliability of online premium payment modules.\n• Managed version control of automation assets using GitHub and integrated automated test execution within CI/CD pipelines, enabling consistent, repeatable and scalable test runs.\n• Mentored junior engineers on automation best practices, test design patterns and defect lifecycle management, contributing to improved team productivity and quality maturity.',
+    description:
+      '• Contributed to UI automation using Java, Selenium WebDriver and Cucumber (BDD), stabilizing existing automation frameworks through utility enhancements and optimized synchronization strategies.\n• Designed and developed Pega UI automation scripts for an insurance policy management system.\n• Implemented BDD-based automation frameworks using Cucumber, aligning test scenarios with business requirements.\n• Executed Regression Testing and System Integration Testing (SIT) for online premium payment modules.\n• Managed automation assets using GitHub and integrated automated test execution within CI/CD pipelines.\n• Mentored junior engineers on automation best practices, test design patterns and defect lifecycle management.',
   },
   {
     title: 'Test Engineer',
@@ -40,7 +56,8 @@ export const workExperienceData: Experience[] = [
     domain: 'Manufacturing | Customer Relationship Management',
     startDate: 'Jan 2018',
     endDate: 'Nov 2020',
-    description: '• Prepared test plans, test scenarios and detailed test cases to ensure comprehensive requirements coverage and traceability.\n• Performed end-to-end manual testing for CRM modules, including functional testing, regression testing and integration testing, to validate business workflows.\n• Logged, tracked and managed defects in Jira, improving defect closure rates and minimizing defect leakage across releases.\n• Designed and implemented a Page Object Model (POM) automation framework using Java and Selenium WebDriver for the Periculos CRM application, improving script reusability and maintainability.\n• Prepared and distributed Daily and Weekly Status Reports (DSR/WSR) to communicate project progress, testing status, risks and deliverables, ensuring transparency and stakeholder alignment.',
+    description:
+      '• Prepared test plans, test scenarios and detailed test cases to ensure comprehensive requirements coverage.\n• Performed end-to-end manual testing for CRM modules, including functional, regression and integration testing.\n• Logged, tracked and managed defects in Jira.\n• Designed and implemented a Page Object Model (POM) automation framework using Java and Selenium WebDriver for the Periculos CRM application.\n• Prepared Daily and Weekly Status Reports (DSR/WSR) to communicate project progress, testing status and risks.',
   },
 ];
 
@@ -55,72 +72,162 @@ export const educationData: Education[] = [
 ];
 
 export const skillsData: Skill[] = [
-    { name: 'Java', icon: FaJava, color: '#f89820' },
-    { name: 'Selenium', icon: SiSelenium, color: '#43B02A' },
-    { name: 'Playwright', icon: Rocket, color: '#2EAD33'},
-    { name: 'Cucumber (BDD)', icon: SiCucumber, color: '#23BE23' },
-    { name: 'TestNG', icon: GrTest, color: '#FFC107' },
-    { name: 'Eclipse', icon: Code, color: '#2C2255' },
-    { name: 'IntelliJ IDEA', icon: Code, color: '#1572B6' },
-    { name: 'DevTest', icon: TestTube, color: '#0066CC' },
-    { name: 'Jira', icon: SiJira, color: '#0052CC' },
-    { name: 'Commando', icon: TestTube, color: '#FF6B35' },
-    { name: 'Confluence', icon: FileText, color: '#025BE8' },
-    { name: 'TeamCity', icon: RefreshCw, color: '#000000' },
-    { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
-    { name: 'Bruno', icon: Rocket, color: '#564945' },
-    { name: 'Git', icon: Code, color: '#f05033' },
-    { name: 'GitHub', icon: Github, color: '#ffffff' },
-    { name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
-//    { name: 'JavaScript', icon: SiJavascript, color: '#f7df1e' },
-//    { name: 'TypeScript', icon: SiTypescript, color: '#3178c6' },
-//    { name: 'RestAssured', icon: Rocket, color: '#E53935' },
-//    { name: 'Spring Boot', icon: SiSpringboot, color: '#6DB33F' },
-//    { name: 'Microservices Testing', icon: Network, color: '#6c5ce7' },
-//    { name: 'CI/CD', icon: GitMerge, color: '#f05033' },
-//    { name: 'Gatling', icon: SiGatling, color: '#FF9E2A' },
-//    { name: 'JUnit', icon: GrTest, color: '#25A162' },
-//    { name: 'Azure DevOps', icon: Cog, color: '#0078D7' },
-//    { name: 'Postgres', icon: Database, color: '#336791' },
-//    { name: 'Docker', icon: SiDocker, color: '#2496ED' },
+  { name: 'Java', icon: FaJava, color: '#f89820' },
+  { name: 'Selenium', icon: SiSelenium, color: '#43B02A' },
+  { name: 'Playwright', icon: Rocket, color: '#2EAD33' },
+  { name: 'Cucumber (BDD)', icon: SiCucumber, color: '#23BE23' },
+  { name: 'TestNG', icon: GrTest, color: '#FFC107' },
+  { name: 'Eclipse', icon: Code, color: '#2C2255' },
+  { name: 'IntelliJ IDEA', icon: Code, color: '#1572B6' },
+  { name: 'DevTest', icon: TestTube, color: '#0066CC' },
+  { name: 'Jira', icon: SiJira, color: '#0052CC' },
+  { name: 'Commando', icon: TestTube, color: '#FF6B35' },
+  { name: 'Confluence', icon: FileText, color: '#025BE8' },
+  { name: 'TeamCity', icon: RefreshCw, color: '#000000' },
+  { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
+  { name: 'Bruno', icon: Rocket, color: '#564945' },
+  { name: 'Git', icon: Code, color: '#f05033' },
+  { name: 'GitHub', icon: Github, color: '#ffffff' },
+  { name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
 ];
 
 export const projectsData: Project[] = [
   {
     id: 'project-1',
     title: 'Manufacturing Operations Management System',
+    domain: 'Manufacturing',
+    role: 'QA Engineer – Test Automation',
     description:
-      'Worked on a web-based Manufacturing Operations Management system designed to support core manufacturing processes such as production planning, inventory tracking, and quality control. Developed and maintained an automation testing framework using Java, Selenium WebDriver, and Cucumber to validate critical manufacturing workflows and ensure application stability across releases.',
+      'A web-based manufacturing operations platform supporting production planning, inventory tracking and quality control. Focused on validating important manufacturing workflows through functional testing and automation.',
+    responsibilities: [
+      'Designed and maintained automated test scenarios for critical manufacturing workflows.',
+      'Validated production planning, inventory and quality-related business processes.',
+      'Performed functional and regression testing across application releases.',
+      'Identified defects and supported defect verification and closure.',
+    ],
+    testingFocus: [
+      'Functional Testing',
+      'Regression Testing',
+      'Workflow Validation',
+      'UI Automation',
+      'Defect Tracking',
+    ],
   },
   {
     id: 'project-2',
     title: 'Customer Relationship Management (CRM) System',
+    domain: 'CRM',
+    role: 'Test Engineer',
     description:
-      'Worked on a web-based Customer Relationship Management (CRM) system designed to manage customer information, lead tracking, contact management, and sales activities. Performed functional and regression testing of key CRM workflows and developed automation test scripts using Java, Selenium WebDriver, and TestNG to validate application functionality and stability.',
+      'A web-based CRM application supporting customer information, lead tracking, contact management and sales-related business workflows. Worked on manual testing and Selenium automation using Java and TestNG.',
+    responsibilities: [
+      'Prepared test plans, scenarios and detailed test cases.',
+      'Performed functional, integration and regression testing.',
+      'Developed Selenium automation scripts using Java and TestNG.',
+      'Applied Page Object Model principles for reusable automation components.',
+      'Tracked defects and communicated testing progress through status reports.',
+    ],
+    testingFocus: [
+      'Manual Testing',
+      'Functional Testing',
+      'Regression Testing',
+      'Selenium Automation',
+      'Page Object Model',
+    ],
   },
   {
     id: 'project-3',
     title: 'Enterprise Insurance Claims Management Platform – Test Automation',
+    domain: 'Insurance',
+    role: 'Senior Test Engineer',
     description:
-      'Worked on an enterprise Pega Case Management platform designed to process insurance claims across multiple lines of business using a unified and reusable case management framework. Focused on automation strategy, framework development, and test execution to validate complex Pega workflows, business rules, SLAs, and system integrations.',
+      'An enterprise Pega Case Management platform supporting insurance claims processing across multiple business lines. Focused on validating Pega workflows, business rules, SLAs and system integrations through UI automation and regression testing.',
+    responsibilities: [
+      'Developed and maintained Pega UI automation scripts using Java and Selenium.',
+      'Implemented BDD-based test scenarios using Cucumber.',
+      'Validated insurance case workflows and business rule execution.',
+      'Performed system integration and regression testing.',
+      'Improved automation stability through reusable components and synchronization strategies.',
+    ],
+    testingFocus: [
+      'Pega UI Testing',
+      'Business Rule Validation',
+      'SLA Validation',
+      'Integration Testing',
+      'Regression Automation',
+    ],
   },
   {
     id: 'project-4',
     title: 'Next Best Conversation Decisioning Platform for Banking',
+    domain: 'Banking & Financial Services',
+    role: 'Senior Test Analyst',
     description:
-      'Worked on an enterprise banking decisioning platform built using Pega Next Best Conversation (NBC) to deliver personalized customer interactions across digital and assisted channels. Focused on automating and validating decision logic, eligibility rules, customer journeys, and channel-specific outcomes to ensure accurate and consistent customer experiences.',
+      'An enterprise banking decisioning platform built using Pega Next Best Conversation (NBC), supporting personalized customer interactions across digital and assisted channels. Focused on validating decision logic, eligibility rules and end-to-end customer journeys.',
+    responsibilities: [
+      'Designed automation scenarios for Pega Decisioning workflows.',
+      'Validated decision strategies, business rules and customer eligibility.',
+      'Tested customer journeys and channel-specific outcomes.',
+      'Performed functional and end-to-end testing.',
+      'Integrated automated regression execution into TeamCity CI/CD pipelines.',
+      'Collaborated with Agile teams to support release quality and defect management.',
+    ],
+    testingFocus: [
+      'Pega Decisioning',
+      'Next Best Conversation',
+      'Decision Strategy Validation',
+      'End-to-End Testing',
+      'Regression Automation',
+    ],
   },
   {
     id: 'project-5',
     title: 'Automation Testing Framework Development (Java, Selenium, Cucumber)',
+    domain: 'Test Automation',
+    role: 'Automation Test Engineer',
     description:
-      'Designed and implemented a modular automation testing framework using Java, Selenium WebDriver, and Cucumber (BDD) for web application testing. Applied Page Object Model (POM), reusable components, and Gherkin-based scenarios to improve test maintainability, scalability, and collaboration between QA and development teams.',
+      'A modular web automation framework developed using Java, Selenium WebDriver, Cucumber BDD and TestNG. Designed around Page Object Model principles to support reusable components, maintainability, execution control and reporting.',
+    responsibilities: [
+      'Designed a modular automation framework architecture.',
+      'Integrated Selenium WebDriver with Java and Cucumber.',
+      'Implemented Page Object Model for maintainable page interactions.',
+      'Configured TestNG runner integration and execution management.',
+      'Implemented Cucumber hooks, tags and reusable step definitions.',
+      'Integrated Extent Reports and failure screenshot handling.',
+      'Focused on framework stability and reusable automation utilities.',
+    ],
+    testingFocus: [
+      'Java',
+      'Selenium WebDriver',
+      'Cucumber BDD',
+      'TestNG',
+      'Page Object Model',
+      'Extent Reports',
+    ],
   },
   {
     id: 'project-6',
     title: 'Kush QA — QA Learning Hub',
+    domain: 'QA Education & Interview Preparation',
+    role: 'Founder & Content Creator',
     description:
-      'Created a technical learning platform featuring structured tutorials and practical learning resources on Manual Testing, Core Java, Selenium WebDriver, Cucumber Framework, API Testing, SQL, and AI for Testing. The platform helps QA professionals strengthen their software testing knowledge and prepare for technical interviews.',
+      'A QA learning platform created to help software testing professionals learn concepts step by step and prepare for technical interviews through structured tutorials and practical examples.',
+    responsibilities: [
+      'Created structured Manual Testing learning resources.',
+      'Published Core Java and Selenium WebDriver tutorials.',
+      'Developed learning content for API Testing using Postman and Bruno.',
+      'Created SQL, Cucumber Framework and Playwright learning resources.',
+      'Added AI for Testing concepts and interview preparation material.',
+    ],
+    testingFocus: [
+      'Manual Testing',
+      'Java',
+      'Selenium',
+      'API Testing',
+      'SQL',
+      'Cucumber',
+      'AI for Testing',
+    ],
     link: 'https://kushqa.blogspot.com/',
   },
 ];

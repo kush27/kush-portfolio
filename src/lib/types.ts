@@ -1,5 +1,7 @@
+
 import { LucideIcon } from 'lucide-react';
 import { IconType } from 'react-icons';
+
 export interface Profile {
   name: string;
   avatar: string;
@@ -26,7 +28,6 @@ export interface Education {
   institution: string;
   degree: string;
   startDate: string;
-
   endDate?: string;
   description?: string;
 }
@@ -36,6 +37,7 @@ export interface Skill {
   level?: number;
   icon?: LucideIcon | IconType;
   color?: string;
+  category?: string;
 }
 
 export interface Project {
@@ -43,4 +45,8 @@ export interface Project {
   title: string;
   description: string;
   link?: string;
+  role?: string;
+  domain?: string;
+  responsibilities?: string[];
+  testingFocus?: string[];
 }

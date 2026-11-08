@@ -5,7 +5,7 @@ import { projectsData } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, X, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, X, ExternalLink, Briefcase, Target, Wrench } from 'lucide-react';
 
 const tagMap: Record<string, string> = {
   'project-1': 'MANUFACTURING',
@@ -18,50 +18,48 @@ const tagMap: Record<string, string> = {
 
 const techStackMap: Record<string, string[]> = {
   'project-1': ['Java', 'Selenium', 'Cucumber'],
-  'project-2': ['Java', 'Selenium', 'TestNG'],
+  'project-2': ['Java', 'Selenium', 'TestNG', 'POM'],
   'project-3': ['Pega', 'Java', 'Selenium', 'Cucumber'],
-  'project-4': ['Pega Decisioning', 'Java', 'Selenium', 'Cucumber'],
-  'project-5': ['Java', 'Selenium', 'Cucumber', 'TestNG', 'POM'],
-  'project-6': [
-    'Manual Testing',
-    'Java',
-    'Selenium',
-    'API Testing',
-    'SQL',
-  ],
+  'project-4': ['Pega Decisioning', 'Java', 'Selenium', 'Cucumber', 'TeamCity'],
+  'project-5': ['Java', 'Selenium', 'Cucumber', 'TestNG', 'POM', 'Extent Reports'],
+  'project-6': ['Manual Testing', 'Java', 'Selenium', 'API Testing', 'SQL', 'AI for Testing'],
 };
 
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
   const selectedProjectData = projectsData.find(
     (project) => project.id === selectedProject
   );
 
-  // Reveal animation
+  // Scroll reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('opacity-100', 'translate-y-0');
-            e.target.classList.remove('opacity-0', 'translate-y-6');
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-6');
           }
-        }),
+        });
+      },
       { threshold: 0.1 }
     );
 
     ref.current
       ?.querySelectorAll('.reveal-item')
-      .forEach((el) => observer.observe(el));
+      .forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
   }, []);
 
-  // Close popup using Escape key
+  // Keyboard accessibility and modal focus
   useEffect(() => {
     if (!selectedProject) return;
+
+    closeButtonRef.current?.focus();
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -70,11 +68,11 @@ export default function Portfolio() {
     };
 
     window.addEventListener('keydown', handleEscape);
-
-    return () => {
-      window.removeEventListener('keydown', handleEscape);
-    };
+    return () => window.removeEventListener('keydown', handleEscape);
   }, [selectedProject]);
+
+  const cardClassName =
+    'project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 flex flex-col h-full';
 
   return (
     <section id="portfolio" className="py-28" ref={ref}>
@@ -91,25 +89,31 @@ export default function Portfolio() {
             Featured Projects
           </h2>
 
-          <p className="text-muted-foreground max-w-xl text-sm leading-relaxed">
-            Key automation and engineering initiatives, alongside my QA
-            learning resources covering software testing and automation.
+          <p className="text-muted-foreground max-w-2xl text-sm leading-relaxed">
+            Explore my experience across enterprise application testing,
+            Pega Decisioning, UI automation, framework development and
+            QA learning initiatives.
           </p>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <span className="text-xs px-3 py-2 rounded-lg bg-secondary border border-border text-muted-foreground">
+              5 Project Case Studies
+            </span>
+            <span className="text-xs px-3 py-2 rounded-lg bg-secondary border border-border text-muted-foreground">
+              1 QA Learning Platform
+            </span>
+          </div>
         </div>
 
-        {/* Project Cards */}
+        {/* Existing Project Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
-          {projectsData.map((project, i) => {
+          {projectsData.map((project, index) => {
             const img = PlaceHolderImages.find(
-              (p) => p.id === project.id
+              (image) => image.id === project.id
             );
 
             const isBlog = project.id === 'project-6';
             const techStack = techStackMap[project.id] ?? [];
-
-            const cardClassName =
-              'project-card reveal-item opacity-0 translate-y-6 transition-all duration-700 bg-card border border-border rounded-2xl overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/30 flex flex-col h-full';
 
             const cardContent = (
               <>
@@ -117,15 +121,16 @@ export default function Portfolio() {
                 {img && (
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={img.imageUrl as string}
+                      src={img.imageUrl}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="project-img-zoom object-cover grayscale-[20%] group-hover:grayscale-0"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-transparent to-transparent" />
 
-                    <div className="absolute top-4 left-4 bg-background/80 backdrop-blur border border-border rounded-full px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
+                    <div className="absolute top-4 left-4 bg-background/85 backdrop-blur border border-border rounded-full px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
                       {tagMap[project.id] ?? 'PROJECT'}
                     </div>
                   </div>
@@ -133,17 +138,22 @@ export default function Portfolio() {
 
                 {/* Project Information */}
                 <div className="p-6 flex flex-col flex-1">
-
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-headline text-lg font-black group-hover:text-primary transition-colors">
+                    <h3 className="font-headline text-lg font-black leading-snug group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
 
                     <ArrowUpRight
-                      className="h-5 w-5 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all flex-shrink-0 -translate-x-1 group-hover:translate-x-0 -translate-y-1 group-hover:translate-y-0"
+                      className="h-5 w-5 text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all flex-shrink-0"
                       aria-hidden="true"
                     />
                   </div>
+
+                  {project.domain && (
+                    <p className="text-xs text-primary font-semibold uppercase tracking-wider mb-3">
+                      {project.domain}
+                    </p>
+                  )}
 
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {project.description}
@@ -152,7 +162,7 @@ export default function Portfolio() {
                   {/* Technology Stack */}
                   <div className="mt-5">
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">
-                      Technologies
+                      Tools & Technologies
                     </p>
 
                     <div className="flex flex-wrap gap-2">
@@ -167,26 +177,20 @@ export default function Portfolio() {
                     </div>
                   </div>
 
-                  {/* Blog Link Text */}
-                  {isBlog && (
-                    <span className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
-                      Explore Kush QA Blog
+                  {/* Card Action */}
+                  <span className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-primary">
+                    {isBlog ? 'Explore Kush QA Blog' : 'View Project Case Study'}
+                    {isBlog ? (
+                      <ExternalLink className="h-4 w-4" />
+                    ) : (
                       <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  )}
-
-                  {/* View Details Text */}
-                  {!isBlog && (
-                    <span className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-primary">
-                      View Project Details
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  )}
+                    )}
+                  </span>
                 </div>
               </>
             );
 
-            // Blog Card
+            // Kush QA Blog Card
             if (isBlog) {
               return (
                 <a
@@ -196,116 +200,204 @@ export default function Portfolio() {
                   rel="noopener noreferrer"
                   aria-label={`${project.title} — opens in a new tab`}
                   className={cardClassName}
-                  style={{ transitionDelay: `${i * 80}ms` }}
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   {cardContent}
                 </a>
               );
             }
 
-            // Other Project Cards
+            // Project Case Study Cards
             return (
-              <div
+              <button
                 key={project.id}
-                role="button"
-                tabIndex={0}
-                aria-label={`View details for ${project.title}`}
+                type="button"
+                aria-label={`View case study for ${project.title}`}
                 onClick={() => setSelectedProject(project.id)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedProject(project.id);
-                  }
-                }}
                 className={`${cardClassName} cursor-pointer text-left`}
-                style={{ transitionDelay: `${i * 80}ms` }}
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
                 {cardContent}
-              </div>
+              </button>
             );
           })}
         </div>
 
-        {/* Project Details Popup */}
+        {/* Project Case Study Modal */}
         {selectedProjectData && (
           <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 backdrop-blur-sm p-3 sm:p-5"
             onClick={() => setSelectedProject(null)}
           >
             <div
               role="dialog"
               aria-modal="true"
               aria-labelledby="project-modal-title"
-              className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-card shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
             >
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setSelectedProject(null)}
-                aria-label="Close project details"
-                className="absolute right-5 top-5 rounded-full p-2 text-muted-foreground hover:bg-secondary hover:text-primary transition-colors"
-              >
-                <X className="h-5 w-5" />
-              </button>
-
-              {/* Project Title */}
-              <div className="mb-7 pr-10">
+              {/* Modal Header */}
+              <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 backdrop-blur px-6 py-4 sm:px-8">
                 <span className="text-xs font-bold tracking-widest uppercase text-primary">
-                  {tagMap[selectedProjectData.id] ?? 'PROJECT'}
+                  {tagMap[selectedProjectData.id] ?? 'PROJECT CASE STUDY'}
                 </span>
 
-                <h2
-                  id="project-modal-title"
-                  className="mt-3 text-2xl sm:text-3xl font-black font-headline"
+                <button
+                  ref={closeButtonRef}
+                  type="button"
+                  onClick={() => setSelectedProject(null)}
+                  aria-label="Close project details"
+                  className="rounded-full p-2 text-muted-foreground hover:bg-secondary hover:text-primary transition-colors"
                 >
-                  {selectedProjectData.title}
-                </h2>
+                  <X className="h-5 w-5" />
+                </button>
               </div>
 
-              {/* Project Overview */}
-              <div className="mb-7">
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-3">
-                  Project Overview
-                </h3>
+              <div className="p-6 sm:p-8">
 
-                <p className="text-sm text-muted-foreground leading-7">
-                  {selectedProjectData.description}
-                </p>
-              </div>
+                {/* Project Title */}
+                <div className="mb-8">
+                  <h2
+                    id="project-modal-title"
+                    className="text-2xl sm:text-3xl font-black font-headline leading-tight mb-4"
+                  >
+                    {selectedProjectData.title}
+                  </h2>
 
-              {/* Technologies */}
-              <div className="mb-7">
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-3">
-                  Tools & Technologies
-                </h3>
-
-                <div className="flex flex-wrap gap-2">
-                  {(techStackMap[selectedProjectData.id] ?? []).map(
-                    (tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-lg border border-border bg-secondary/70 px-3 py-2 text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    )
+                  {selectedProjectData.domain && (
+                    <span className="inline-block bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-xs font-semibold">
+                      {selectedProjectData.domain}
+                    </span>
                   )}
                 </div>
-              </div>
 
-              {/* Close Action */}
-              <button
-                type="button"
-                onClick={() => setSelectedProject(null)}
-                className="rounded-lg border border-border px-5 py-3 text-sm font-semibold hover:bg-secondary transition-colors"
-              >
-                Close Details
-              </button>
+                {/* Project Overview */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Briefcase className="h-4 w-4 text-primary" />
+                    <h3 className="text-sm font-bold uppercase tracking-wider">
+                      Project Overview
+                    </h3>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-7">
+                    {selectedProjectData.description}
+                  </p>
+                </div>
+
+                {/* Role */}
+                {selectedProjectData.role && (
+                  <div className="mb-8 rounded-xl border border-border bg-background p-5">
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold mb-2">
+                      My Role
+                    </p>
+                    <p className="text-sm font-semibold text-foreground">
+                      {selectedProjectData.role}
+                    </p>
+                  </div>
+                )}
+
+                {/* Responsibilities */}
+                {selectedProjectData.responsibilities &&
+                  selectedProjectData.responsibilities.length > 0 && (
+                    <div className="mb-8">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Target className="h-4 w-4 text-primary" />
+                        <h3 className="text-sm font-bold uppercase tracking-wider">
+                          Key Responsibilities
+                        </h3>
+                      </div>
+
+                      <ul className="space-y-3">
+                        {selectedProjectData.responsibilities.map(
+                          (item, index) => (
+                            <li
+                              key={index}
+                              className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed"
+                            >
+                              <span className="text-primary mt-0.5">●</span>
+                              <span>{item}</span>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                  )}
+
+                {/* Testing Focus */}
+                {selectedProjectData.testingFocus &&
+                  selectedProjectData.testingFocus.length > 0 && (
+                    <div className="mb-8">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Target className="h-4 w-4 text-primary" />
+                        <h3 className="text-sm font-bold uppercase tracking-wider">
+                          Testing Focus
+                        </h3>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProjectData.testingFocus.map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-lg border border-border bg-secondary/70 px-3 py-2 text-xs font-medium text-secondary-foreground"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                {/* Technologies */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Wrench className="h-4 w-4 text-primary" />
+                    <h3 className="text-sm font-bold uppercase tracking-wider">
+                      Tools & Technologies
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {(techStackMap[selectedProjectData.id] ?? []).map(
+                      (tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-lg border border-border bg-secondary/70 px-3 py-2 text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+
+                {/* Blog Link */}
+                {selectedProjectData.link && (
+                  <a
+                    href={selectedProjectData.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline mb-6"
+                  >
+                    Visit Kush QA Blog
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                )}
+
+                {/* Close Action */}
+                <div className="border-t border-border pt-5">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(null)}
+                    className="rounded-lg border border-border px-5 py-3 text-sm font-semibold hover:bg-secondary transition-colors"
+                  >
+                    Close Case Study
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         )}
-
       </div>
     </section>
   );
