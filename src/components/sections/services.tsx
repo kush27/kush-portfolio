@@ -7,7 +7,7 @@ const services = [
     title: 'Test Automation',
     items: [
       'UI Automation — Java, Selenium, Playwright',
-      'API Testing — Postman / REST Assured',
+      'API Testing — Postman and Bruno',
       'BDD Frameworks — Cucumber',
       'Cross-browser and cross-platform execution',
     ],
