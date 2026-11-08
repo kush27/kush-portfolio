@@ -96,7 +96,7 @@ export const projectsData: Project[] = [
     id: 'project-1',
     title: 'Manufacturing Operations Management System',
     domain: 'Manufacturing',
-    role: 'QA Engineer – Test Automation',
+    role: 'Test Engineer',
     description:
       'A web-based manufacturing operations platform supporting production planning, inventory tracking and quality control. Focused on validating important manufacturing workflows through functional testing and automation.',
     responsibilities: [
